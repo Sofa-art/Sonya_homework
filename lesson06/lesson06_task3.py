@@ -10,11 +10,14 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get('https://bonigarcia.dev/selenium-webdriver-java/loading-images.html')
 
-element=WebDriverWait (driver, 10).until(
-    EC.visibility_of_element_located((By.CSS_SELECTOR, '#award'))
-)
+WebDriverWait(driver, 30).until(
+        EC.text_to_be_present_in_element((By.TAG_NAME, "body"), "Done")
+    )
+images = driver.find_elements(By.TAG_NAME, "img")
+if len(images) >= 3:
+        third_image_src = images[2].get_attribute("src")
+        print("SRC третьей картинки:", third_image_src)
+else:
+        print("Третья картинка не найдена")
 
-src = element.get_attribute ("src")
-print(src)
-
-driver.quit
+driver.quit()
