@@ -1,17 +1,17 @@
 import pytest
-from time import sleep
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 @pytest.fixture(scope="module")
 def driver():
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+    driver = webdriver.Firefox
     driver.maximize_window()
     yield driver
     driver.quit()
