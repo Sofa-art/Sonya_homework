@@ -1,3 +1,4 @@
+import pytest
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -10,7 +11,7 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 driver = edge_driver_path = r"c:\Users\Саният\Desktop\Work\Edge\msedgedriver.exe"
 
-
+@pytest.fixture(scope="module")
 def driver():
     driver = webdriver.Edge(service=EdgeService(edge_driver_path))
     driver.maximize_window()
