@@ -19,5 +19,5 @@ class checkout:
     def total(self,driver):
        total_cost = driver.find_element(By.CLASS_NAME, "summary_total_label").text
        total_cost_value = float(total_cost.split("$")[1])
-       assert total_cost_value == 58.29
+       return total_cost_value
     

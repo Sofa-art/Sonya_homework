@@ -19,4 +19,6 @@ def test_shop():
     checkout_page.form(driver)
     checkout_page.button(driver)
     checkout_page.total(driver)
+    res = checkout_page.total (driver)
+    assert res == 58.29
     driver.quit()

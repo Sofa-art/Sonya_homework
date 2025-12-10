@@ -17,4 +17,7 @@ def test_form_submission_flow(driver):
     form_page.open()
     form_page.fill_form()
     form_page.submit_form()
-    form_page.check_form_submission()
+    res = form_page.check_zip_code_error()
+    result = form_page.check_fields_success()
+    assert form_page.check_zip_code_error() == True
+    assert result == True
