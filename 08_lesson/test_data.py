@@ -1,5 +1,0 @@
-login = "jlkdodik@yandex.ru"
-password = "Zima2025#"
-token="LjZ3zo5hP25IRSiyhJM2xrDeljUUIYD7PFrTPmXmE-5kGWSHR-pIbOxIO+Hlv-n6"
-companyId= "bdbd1d09-fd78-4445-83b7-36a52b3695fb"
-project_id="0e75487b-e1b8-4f0e-8c5c-52af7742f628"
